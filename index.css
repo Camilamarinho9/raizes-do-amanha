@@ -1,0 +1,900 @@
+:root {
+    --verde-neon: #00ff41;
+    --verde-neon-glow: rgba(0, 255, 65, 0.35);
+    --verde-hover: rgba(0, 255, 65, 0.16);
+    --fundo-opaco: rgba(0, 0, 0, 0.75);
+    --borda-clara: rgba(255, 255, 255, 0.15);
+    --fonte-titulos: 'Georgia', serif;
+    --fonte-textos: 'Arial', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url("img/1000432473.png");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    color: white;
+    font-family: var(--fonte-textos);
+}
+
+/* ==========================================
+   NAVBAR (COM TRANSIÇÃO SUAVE)
+   ========================================== */
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px 40px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--borda-clara);
+    transition: transform 0.18s ease-out; 
+}
+
+/* Classe ativada pelo JS para esconder a barra */
+.nav-escondida {
+    transform: translateY(-100%);
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+nav a{
+    font-family: var(--fonte-titulos);
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    transition: .3s;
+    border-radius: 8px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+nav a:hover{
+    background: var(--verde-hover);
+    color: var(--verde-neon);
+}
+
+.divisor-idioma {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.idiomas{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.idiomas button{
+    background: rgba(255, 255, 255, .08);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.idiomas button:hover{
+    background: var(--verde-hover);
+    color: var(--verde-neon);
+    border-color: var(--verde-neon);
+}
+
+/* ==========================================
+   SELO AGRINHO 2026 NA NAVBAR
+   ========================================== */
+.nav-agrinho {
+    font-family: var(--fonte-titulos);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: var(--verde-neon);
+    text-shadow: 0 0 8px var(--verde-neon), 0 0 20px var(--verde-neon-glow);
+    margin-right: 20px;
+    white-space: nowrap;
+    animation: brilho-pulsante 2s ease-in-out infinite;
+}
+
+/* Animação de brilho pulsante */
+@keyframes brilho-pulsante {
+    0%, 100% {
+        text-shadow: 0 0 6px var(--verde-neon), 0 0 16px var(--verde-neon-glow);
+        opacity: 1;
+    }
+    50% {
+        text-shadow: 0 0 16px var(--verde-neon), 0 0 40px var(--verde-neon), 0 0 60px var(--verde-neon-glow);
+        opacity: 0.85;
+    }
+}
+
+/* ==========================================
+   FORMULÁRIO DE CONTATO
+   ========================================== */
+#contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 40px;
+    background: rgba(0, 0, 0, .85);
+    scroll-margin-top: 75px;
+}
+
+.contato-box {
+    width: 100%;
+    max-width: 620px;
+    padding: 35px 45px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .14);
+    box-shadow: 0 0 24px rgba(0, 255, 65, .12);
+    backdrop-filter: blur(10px);
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-grupo label {
+    font-family: var(--fonte-titulos);
+    font-size: 0.95rem;
+    color: var(--verde-neon);
+    letter-spacing: 1px;
+}
+
+.form-grupo input,
+.form-grupo textarea {
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 8px;
+    color: white;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-family: var(--fonte-textos);
+    outline: none;
+    transition: .3s;
+    resize: vertical;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus {
+    border-color: var(--verde-neon);
+    box-shadow: 0 0 10px rgba(0, 255, 65, .2);
+}
+
+.form-grupo input::placeholder,
+.form-grupo textarea::placeholder {
+    color: rgba(255, 255, 255, .35);
+}
+
+#btn-enviar {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: var(--verde-neon);
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#btn-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(0, 255, 65, .5);
+}
+
+#msg-feedback {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 1rem;
+    min-height: 24px;
+    color: var(--verde-neon);
+    font-weight: bold;
+}
+
+/* Modo claro — formulário */
+body.claro .contato-box {
+    background: rgba(255, 255, 255, .7);
+    border: 1px solid rgba(0, 0, 0, .15);
+}
+body.claro .form-grupo input,
+body.claro .form-grupo textarea {
+    background: rgba(0, 0, 0, .05);
+    border-color: rgba(0, 0, 0, .2);
+    color: #0d1a0a;
+}
+body.claro .form-grupo input::placeholder,
+body.claro .form-grupo textarea::placeholder {
+    color: rgba(0, 0, 0, .4);
+}
+body.claro #msg-feedback {
+    color: #1a7a30;
+}
+
+/* ==========================================
+   HERO (SEÇÃO INICIAL)
+   ========================================== */
+#inicio{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 40px;
+}
+
+.hero-overlay{
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .65));
+}
+
+.hero-content{
+    position: relative;
+    z-index: 2;
+}
+
+h1{
+    font-family: var(--fonte-titulos);
+    font-size: 64px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 28px var(--verde-neon-glow), 2px 2px 12px rgba(0, 0, 0, .9);
+}
+
+.slogan{
+    margin-top: 14px;
+    font-size: 19px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, .9);
+}
+
+.btn-saiba{
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 34px;
+    border: 2px solid white;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: .35s;
+    font-weight: bold;
+}
+
+.btn-saiba:hover{
+    background: var(--verde-hover);
+    color: var(--verde-neon);
+    border-color: var(--verde-neon);
+    transform: translateY(-2px);
+}
+
+.divisor{
+    border-top: 1px solid var(--borda-clara);
+}
+
+/* ==========================================
+   SEÇÕES DE CONTEÚDO (FLEXÍVEIS E CORRIGIDAS)
+   ========================================== */
+#introducao, #sustentabilidade, #tecnologia, #natureza{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 100px 60px;
+    background: rgba(0, 0, 0, .82);
+    backdrop-filter: blur(15px);
+    scroll-margin-top: 75px;
+}
+
+#tecnologia{
+    justify-content: center; 
+}
+
+.foto-intro, .foto-sustent, .foto-tecnologia, .foto-natureza{
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    max-height: 340px; 
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, .22);
+    box-shadow: 0 0 22px rgba(0, 255, 65, .12);
+    transition: .45s;
+}
+
+.foto-intro:hover, .foto-sustent:hover, .foto-tecnologia:hover, .foto-natureza:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(0, 255, 65, .22);
+}
+
+.foto-intro img, .foto-sustent img, .foto-tecnologia img, .foto-natureza img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.texto-intro, .texto-sustent, .texto-tecnologia, .texto-natureza{
+    flex: 1;
+    min-width: 280px;
+}
+
+h2{
+    font-family: var(--fonte-titulos);
+    color: var(--verde-neon);
+    font-size: 2.25rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--verde-neon-glow);
+}
+
+.linha-titulo{
+    width: 80px;
+    height: 3px;
+    background: var(--verde-neon);
+    margin-bottom: 30px;
+    box-shadow: 0 0 12px rgba(0, 255, 65, .45);
+}
+
+.linha-centralizada {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+p {
+    line-height: 1.8;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 16px; 
+}
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==========================================
+   SEÇÃO CURIOSIDADE & QUIZ (COM ALTURA DINÂMICA)
+   ========================================== */
+#curiosidade, #quiz{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 40px;
+    background: rgba(0, 0, 0, .85);
+    scroll-margin-top: 75px;
+}
+
+.curiosidade-box, .quiz-box{
+    width: 100%;
+    max-width: 780px;
+    
+    /* Evita que o card estoure para fora da tela do notebook */
+    
+    padding: 35px 45px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .14);
+    box-shadow: 0 0 24px rgba(0, 255, 65, .12);
+    backdrop-filter: blur(10px);
+}
+
+/* Personalização sutil da barra de rolagem interna das caixas */
+.curiosidade-box::-webkit-scrollbar, .quiz-box::-webkit-scrollbar {
+    width: 6px;
+}
+.curiosidade-box::-webkit-scrollbar-thumb, .quiz-box::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 65, 0.3);
+    border-radius: 4px;
+}
+.curiosidade-box::-webkit-scrollbar-thumb:hover, .quiz-box::-webkit-scrollbar-thumb:hover {
+    background: var(--verde-neon);
+}
+
+#btn-curiosidade, #proxima{
+    margin-top: 30px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    background: var(--verde-neon);
+    color: black;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#btn-curiosidade:hover, #proxima:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(0, 255, 65, .5);
+}
+
+#pergunta{
+    margin-bottom: 30px;
+    font-size: 1.625rem;
+    font-family: var(--fonte-titulos);
+    line-height: 1.4;
+}
+
+#respostas{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+#respostas button{
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .06);
+    color: white;
+    cursor: pointer;
+    transition: .2s;
+    font-size: 1.125rem;
+    text-align: left;
+    padding-left: 24px;
+    width: 100%;
+}
+
+#respostas button:hover{
+    background: var(--verde-hover);
+    border-color: var(--verde-neon);
+    transform: translateX(4px);
+}
+
+#resultado{
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   EFEITO FADE IN
+   ========================================== */
+.fade{
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.fade.mostrar{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   RODAPÉ
+   ========================================== */
+footer {
+    background: rgba(0, 0, 0, 0.95);
+    padding: 35px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 15px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-linha-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-autora {
+    color: var(--verde-neon);
+    text-shadow: 0 0 10px var(--verde-neon), 0 0 24px rgba(0, 255, 65, 0.4);
+    font-weight: bold;
+    font-size: 15px;
+    animation: pulso-nome 2.5s ease-in-out infinite;
+}
+
+@keyframes pulso-nome {
+    0%, 100% { text-shadow: 0 0 10px var(--verde-neon), 0 0 24px rgba(0, 255, 65, 0.4); }
+    50%       { text-shadow: 0 0 20px var(--verde-neon), 0 0 50px rgba(0, 255, 65, 0.7); }
+}
+
+.ia-credits {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+/* ==========================================
+   MODO CLARO
+   ========================================== */
+body.claro {
+    background-image: url('img/1000433553.png');
+    background-position: center top;
+    color: #0d1a0a;
+}
+body.claro nav {
+    background: rgba(240, 247, 235, 0.92);
+}
+body.claro nav a { color: #0d1a0a; }
+body.claro nav a:hover { color: #1a7a30; }
+body.claro .idiomas button { color: #0d1a0a; border-color: rgba(0,0,0,0.2); background: rgba(0,0,0,0.06); }
+body.claro #introducao, body.claro #sustentabilidade,
+body.claro #tecnologia, body.claro #natureza {
+    background: rgba(240, 247, 235, 0.88);
+}
+body.claro #curiosidade, body.claro #quiz {
+    background: rgba(240, 247, 235, 0.88);
+}
+
+/* Quiz no modo claro — texto e borda visíveis */
+body.claro .quiz-box {
+    border: 2px solid #1a7a30;
+    box-shadow: 0 0 16px rgba(26, 122, 48, 0.25);
+    background: rgba(255, 255, 255, 0.7);
+}
+body.claro #pergunta {
+    color: #0d1a0a;
+}
+body.claro #respostas button {
+    color: #0d1a0a;
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+}
+body.claro #respostas button:hover {
+    background: rgba(26, 122, 48, 0.15);
+    border-color: #1a7a30;
+    color: #0d1a0a;
+}
+body.claro #resultado {
+    color: #0d1a0a;
+}
+
+body.claro h2 { color: #1a7a30; }
+body.claro p  { color: #0d2e14; }
+body.claro footer { background: rgba(240,247,235,0.97); color: #0d1a0a; }
+
+/* ==========================================
+   BOTÃO HAMBÚRGUER
+   ========================================== */
+.btn-config {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 16px;
+    border-radius: 6px;
+    transition: .3s;
+}
+.btn-config:hover {
+    border-color: var(--verde-neon);
+    box-shadow: 0 0 10px var(--verde-neon-glow);
+}
+.btn-config span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: .3s;
+}
+.btn-config:hover span { background: var(--verde-neon); }
+
+/* ==========================================
+   MENU DE ACESSIBILIDADE
+   ========================================== */
+.config-menu {
+    position: fixed;
+    top: 70px;
+    right: 40px;
+    z-index: 999;
+    background: rgba(10, 25, 10, 0.97);
+    border: 1px solid rgba(0, 255, 65, 0.4);
+    box-shadow: 0 0 24px var(--verde-neon-glow);
+    padding: 22px 26px;
+    min-width: 200px;
+    border-radius: 10px;
+    animation: fadeDown 0.2s ease;
+}
+.config-hidden { display: none; }
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.config-titulo {
+    font-family: var(--fonte-titulos);
+    font-size: 0.72rem;
+    color: var(--verde-neon);
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+.config-opcao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: white;
+    cursor: pointer;
+    padding: 7px 0;
+    transition: .2s;
+    user-select: none;
+}
+.config-opcao:hover { color: var(--verde-neon); }
+.radio-circulo {
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--verde-neon);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.radio-circulo.ativo::after {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--verde-neon);
+}
+.config-divisor {
+    width: 100%; height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 12px 0;
+}
+.fonte-controles {
+    display: flex; align-items: center; gap: 10px;
+}
+.btn-fonte {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--verde-neon);
+    font-family: var(--fonte-titulos);
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .2s;
+}
+.btn-fonte:hover {
+    background: var(--verde-hover);
+    border-color: var(--verde-neon);
+}
+.fonte-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    min-width: 36px;
+    text-align: center;
+}
+
+/* ==========================================
+   RESPONSIVIDADE MOBILE E TELAS PEQUENAS
+   ========================================== */
+@media(max-width: 992px) {
+    nav {
+        flex-direction: column;
+        padding: 15px;
+        position: static;
+    }
+    .nav-escondida {
+        transform: none;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    .divisor-idioma {
+        width: 60%;
+        height: 1px;
+        margin: 10px auto;
+    }
+    .idiomas {
+        margin-left: 0;
+    }
+    #introducao, #sustentabilidade, #tecnologia, #natureza {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 24px;
+        gap: 35px;
+    }
+    #curiosidade, #quiz {
+        padding: 60px 24px;
+    }
+    .curiosidade-box, .quiz-box { 
+        max-height: none; /* Em celulares deixa o card expandir naturalmente */
+        padding: 30px 20px; 
+    }
+    .linha-titulo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .foto-intro, .foto-sustent, .foto-tecnologia, .foto-natureza {
+        width: 100%;
+        max-width: 320px;
+        height: 280px;
+    }
+    h1 { font-size: 42px; }
+    h2 { font-size: 28px; }
+    p { font-size: 18px; }
+    #pergunta { font-size: 22px; }
+    #respostas button { font-size: 16px; }
+}
+/* ==========================================
+   DECORAÇÕES: GIRASSOL E FOLHA (INTRODUÇÃO)
+   ========================================== */
+
+/* Container da seção introdução precisa de position relative */
+#introducao {
+    position: relative;
+    overflow: visible;
+}
+
+/* Girassol girando no canto superior esquerdo */
+.deco-girassol {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 2.8rem;
+    animation: girar-girassol 6s linear infinite;
+    pointer-events: none;
+    z-index: 10;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+}
+
+@keyframes girar-girassol {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* Folha clicável no canto superior direito */
+.deco-folha {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 2.8rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.1s;
+    filter: drop-shadow(0 0 6px rgba(0, 200, 80, 0.4));
+    user-select: none;
+}
+
+/* Animação de chacoalhar ao clicar */
+.deco-folha.chacoalhar {
+    animation: chacoalhar-folha 0.5s ease;
+}
+
+@keyframes chacoalhar-folha {
+    0%   { transform: rotate(0deg) scale(1); }
+    15%  { transform: rotate(-20deg) scale(1.15); }
+    35%  { transform: rotate(18deg) scale(1.1); }
+    55%  { transform: rotate(-14deg) scale(1.08); }
+    75%  { transform: rotate(10deg) scale(1.04); }
+    90%  { transform: rotate(-5deg) scale(1.01); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+/* Classes do resultado do quiz (substituem inline styles) */
+.resultado-card {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.4);
+}
+.resultado-rank {
+    color: var(--verde-neon);
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+.resultado-pontos {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+.resultado-msg {
+    font-size: 15px;
+    color: #ccc;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Botão de link externo */
+.btn-externo {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 12px 28px;
+    border: 2px solid var(--verde-neon);
+    border-radius: 8px;
+    color: var(--verde-neon);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: .3s;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+.btn-externo:hover {
+    background: var(--verde-hover);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   INDICADOR DE SEÇÃO ATIVA NA NAVBAR
+   ========================================== */
+nav a.nav-ativa {
+    color: var(--verde-neon) !important;
+    background: var(--verde-hover);
+    box-shadow: 0 2px 0 var(--verde-neon);
+}
+
+/* ==========================================
+   IDIOMA ATIVO — CONTORNO VERDE
+   ========================================== */
+.idiomas button.idioma-ativo {
+    color: var(--verde-neon) !important;
+    border-color: var(--verde-neon) !important;
+    background: var(--verde-hover) !important;
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
+}
+
+/* ==========================================
+   HAMBÚRGUER NO MODO CLARO — LINHAS PRETAS
+   ========================================== */
+body.claro .btn-config span {
+    background: #0d1a0a;
+}
+body.claro .btn-config {
+    border-color: rgba(0, 0, 0, 0.25);
+}
+body.claro .btn-config:hover span {
+    background: #1a7a30;
+}
+
+/* ==========================================
+   PULADAS VISÍVEL NO MOBILE
+   ========================================== */
+#resultado {
+    font-size: 1rem;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+@media (max-width: 600px) {
+    #resultado {
+        font-size: 0.9rem;
+        padding: 0 8px;
+    }
+}

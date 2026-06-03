@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Raízes do Amanhã — site sobre agronegócio sustentável brasileiro. Concurso Agrinho 2026.">
+    <meta name="author" content="Camila Marinho dos Santos">
+    <title>Raízes do Amanhã</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- NAVBAR (Menu de Navegação Superior) -->
+    <nav>
+        <!-- Selo Agrinho 2026 com efeito brilhante -->
+        <span class="nav-agrinho">AGRINHO 2026</span>
+        <div class="nav-links">
+            <a href="#inicio" class="nav-inicio">Início</a>
+            <a href="#introducao" class="nav-intro">Introdução</a>
+            <a href="#sustentabilidade" class="nav-sust">Sustentabilidade</a>
+            <a href="#tecnologia" class="nav-tec">Tecnologia</a>
+            <a href="#natureza" class="nav-nat">Natureza</a>
+            <a href="#curiosidade" class="nav-cur">Curiosidade</a>
+            <a href="#quiz" class="nav-quiz">Quiz</a>
+        </div>
+
+        <!-- Linha Divisória e Seleção de Idiomas -->
+        <span class="divisor-idioma"></span>
+
+        <div class="idiomas">
+            <button id="pt">PT</button>
+            <button id="en">EN</button>
+            <button id="es">ES</button>
+        </div>
+
+        <!-- Botão hambúrguer de acessibilidade -->
+        <button id="btn-config" class="btn-config" aria-label="Acessibilidade">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Menu de acessibilidade -->
+    <div id="config-menu" class="config-menu config-hidden">
+        <div class="config-titulo">// TEMA</div>
+        <label class="config-opcao" id="opt-dark">
+            <span class="radio-circulo ativo" id="radio-dark"></span> Modo Escuro
+        </label>
+        <label class="config-opcao" id="opt-light">
+            <span class="radio-circulo" id="radio-light"></span> Modo Claro
+        </label>
+        <div class="config-divisor"></div>
+        <div class="config-titulo">// FONTE</div>
+        <div class="fonte-controles">
+            <button id="btn-fonte-menos" class="btn-fonte">A−</button>
+            <span id="fonte-label" class="fonte-label">100%</span>
+            <button id="btn-fonte-mais" class="btn-fonte">A+</button>
+        </div>
+    </div>
+
+    <!-- HERO (Seção de Entrada) -->
+    <section id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade">
+            <h1 id="titulo-principal">Raízes do Amanhã</h1>
+            <p class="slogan" id="slogan">Equilíbrio entre produção e meio ambiente</p>
+            <a href="#introducao" class="btn-saiba" id="btn-saiba">Saiba Mais</a>
+        </div>
+    </section>
+
+    <div class="divisor"></div>
+
+    <!-- INTRODUÇÃO -->
+    <section id="introducao" class="fade">
+        <!-- Girassol girando no canto superior esquerdo -->
+        <div class="deco-girassol" aria-hidden="true">🌻</div>
+        <!-- Folha clicável no canto superior direito — chacoalha ao clicar -->
+        <div class="deco-folha" id="deco-folha" aria-hidden="true" title="Clique em mim!">🍃</div>
+        <div class="foto-intro">
+            <img src="img/1000432526.png" alt="Fotografia de uma agricultora sorrindo no campo representando o trabalho rural">
+        </div>
+        <div class="texto-intro">
+            <h2 id="intro-titulo">Bem-vindo</h2>
+            <div class="linha-titulo"></div>
+            <div id="intro-container">
+                <p id="intro-p1"></p>
+                <p id="intro-p2"></p>
+                <p id="intro-p3"></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divisor"></div>
+
+    <!-- SUSTENTABILIDADE -->
+    <section id="sustentabilidade" class="fade">
+        <div class="deco-girassol" aria-hidden="true">🌻</div>
+        <div class="deco-folha deco-folha-sec" aria-hidden="true">🍃</div>
+        <div class="foto-sustent">
+            <img src="img/1000432527.png" alt="Plantação jovem crescendo com técnicas sustentáveis de manejo do solo">
+        </div>
+        <div class="texto-sustent">
+            <h2 id="sust-titulo">Sustentabilidade no Campo</h2>
+            <div class="linha-titulo"></div>
+            <div id="sust-container">
+                <p id="sust-p1"></p>
+                <p id="sust-p2"></p>
+                <p id="sust-p3"></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="divisor"></div>
+
+    <!-- TECNOLOGIA -->
+    <section id="tecnologia" class="fade">
+        <div class="deco-girassol" aria-hidden="true">🌻</div>
+        <div class="deco-folha deco-folha-sec" aria-hidden="true">🍃</div>
+        <div class="texto-tecnologia">
+            <h2 id="tec-titulo">Tecnologia no Agro</h2>
+            <div class="linha-titulo"></div>
+            <div id="tec-container">
+                <p id="tec-p1"></p>
+                <p id="tec-p2"></p>
+                <p id="tec-p3"></p>
+            </div>
+        </div>
+        <div class="foto-tecnologia">
+            <img src="img/1000433137.png" alt="Maquinário agrícola tecnológico operando em campo de cultivo moderno">
+        </div>
+    </section>
+
+    <div class="divisor"></div>
+
+    <!-- NATUREZA -->
+    <section id="natureza" class="fade">
+        <div class="deco-girassol" aria-hidden="true">🌻</div>
+        <div class="deco-folha deco-folha-sec" aria-hidden="true">🍃</div>
+        <div class="foto-natureza">
+            <img src="img/1000433139.png" alt="Paisagem de integração natural preservada próxima à área de agricultura sustentável">
+        </div>
+        <div class="texto-natureza">
+            <h2 id="nat-titulo">Natureza e Equilíbrio</h2>
+            <div class="linha-titulo"></div>
+            <div id="nat-container">
+                <p id="nat-p1"></p>
+                <p id="nat-p2"></p>
+                <p id="nat-p3"></p>
+            </div>
+            <a href="https://www.embrapa.br/meio-ambiente" target="_blank" rel="noopener noreferrer" class="btn-externo" id="btn-embrapa">🌿 Saiba mais: Embrapa</a>
+        </div>
+    </section>
+
+    <div class="divisor"></div>
+
+    <!-- CURIOSIDADE -->
+    <section id="curiosidade" class="fade">
+        <div class="curiosidade-box">
+            <h2 id="curiosidade-titulo">🌱 Você Sabia?</h2>
+            <div class="linha-titulo linha-centralizada"></div>
+            <p id="texto-curiosidade"></p>
+            <button id="btn-curiosidade">Mostrar Outra Curiosidade</button>
+        </div>
+    </section>
+
+    <div class="divisor"></div>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="fade">
+        <h2 id="quiz-titulo">Quiz do Agro</h2>
+        <div class="linha-titulo linha-centralizada"></div>
+        <div class="quiz-box">
+            <h3 id="pergunta">Pergunta aparecerá aqui</h3>
+            <div id="respostas"></div>
+            <button id="proxima">Próxima Pergunta</button>
+            <p id="resultado"></p>
+        </div>
+    </section>
+
+    <div class="divisor"></div>
+
+    <!-- FORMULÁRIO DE CONTATO -->
+    <section id="contato" class="fade">
+        <h2 id="contato-titulo">Deixe seu Feedback</h2>
+        <div class="linha-titulo linha-centralizada"></div>
+        <div class="contato-box">
+            <div class="form-grupo">
+                <label for="campo-nome" id="label-nome">Nome</label>
+                <input type="text" id="campo-nome" placeholder="Seu nome completo" />
+            </div>
+            <div class="form-grupo">
+                <label for="campo-email" id="label-email">E-mail</label>
+                <input type="email" id="campo-email" placeholder="seu@email.com" />
+            </div>
+            <div class="form-grupo">
+                <label for="campo-mensagem" id="label-mensagem">Mensagem</label>
+                <textarea id="campo-mensagem" rows="4" placeholder="Escreva sua mensagem..."></textarea>
+            </div>
+            <button id="btn-enviar">Enviar</button>
+            <p id="msg-feedback"></p>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-linha-principal">
+                <p>&copy; 2026 - Projeto Raízes do Amanhã. Concurso Agrinho.</p>
+                <p class="footer-autora">Feito por: Camila Marinho 💚</p>
+            </div>
+            <p class="ia-credits">Desenhado e desenvolvido com suporte de IA para códigos e geração de mídias ilustrativas.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
