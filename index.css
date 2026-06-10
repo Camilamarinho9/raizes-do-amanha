@@ -396,9 +396,6 @@ p:last-child {
 .curiosidade-box, .quiz-box{
     width: 100%;
     max-width: 780px;
-    
-    /* Evita que o card estoure para fora da tela do notebook */
-    
     padding: 35px 45px;
     border-radius: 18px;
     background: rgba(255, 255, 255, .04);
@@ -734,7 +731,7 @@ body.claro footer { background: rgba(240,247,235,0.97); color: #0d1a0a; }
         padding: 60px 24px;
     }
     .curiosidade-box, .quiz-box { 
-        max-height: none; /* Em celulares deixa o card expandir naturalmente */
+        max-height: none;
         padding: 30px 20px; 
     }
     .linha-titulo {
@@ -746,23 +743,26 @@ body.claro footer { background: rgba(240,247,235,0.97); color: #0d1a0a; }
         max-width: 320px;
         height: 280px;
     }
-    h1 { font-size: 42px; }
-    h2 { font-size: 28px; }
-    p { font-size: 18px; }
-    #pergunta { font-size: 22px; }
-    #respostas button { font-size: 16px; }
+
+    /* === FONTES EM REM (agora o A+/A- funciona no celular) === */
+    h1 { font-size: 2.6rem; }
+    h2 { font-size: 1.75rem; }
+    p { font-size: 1.1rem; }
+    #pergunta { font-size: 1.4rem; }
+    #respostas button { font-size: 1.05rem; }
+    .slogan { font-size: 1.2rem; }
+    .nav-agrinho { font-size: 0.85rem; }
 }
+
 /* ==========================================
    DECORAÇÕES: GIRASSOL E FOLHA (INTRODUÇÃO)
    ========================================== */
 
-/* Container da seção introdução precisa de position relative */
 #introducao {
     position: relative;
     overflow: visible;
 }
 
-/* Girassol girando no canto superior esquerdo */
 .deco-girassol {
     position: absolute;
     top: 16px;
@@ -779,7 +779,6 @@ body.claro footer { background: rgba(240,247,235,0.97); color: #0d1a0a; }
     to   { transform: rotate(360deg); }
 }
 
-/* Folha clicável no canto superior direito */
 .deco-folha {
     position: absolute;
     top: 16px;
@@ -792,7 +791,6 @@ body.claro footer { background: rgba(240,247,235,0.97); color: #0d1a0a; }
     user-select: none;
 }
 
-/* Animação de chacoalhar ao clicar */
 .deco-folha.chacoalhar {
     animation: chacoalhar-folha 0.5s ease;
 }
@@ -806,7 +804,8 @@ body.claro footer { background: rgba(240,247,235,0.97); color: #0d1a0a; }
     90%  { transform: rotate(-5deg) scale(1.01); }
     100% { transform: rotate(0deg) scale(1); }
 }
-/* Classes do resultado do quiz (substituem inline styles) */
+
+/* Classes do resultado do quiz */
 .resultado-card {
     margin-top: 20px;
     padding: 15px;
@@ -871,7 +870,7 @@ nav a.nav-ativa {
 }
 
 /* ==========================================
-   HAMBÚRGUER NO MODO CLARO — LINHAS PRETAS
+   HAMBÚRGUER NO MODO CLARO
    ========================================== */
 body.claro .btn-config span {
     background: #0d1a0a;
